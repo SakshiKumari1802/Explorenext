@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMatch | Personalized Travel Recommendations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Explorenext</span>
+                </div>
+            </div>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <select class="search-category">
+                        <option>All Destinations</option>
+                        <option>Asia</option>
+                        <option>Europe</option>
+                        <option>North America</option>
+                        <option>South America</option>
+                        <option>Africa</option>
+                        <option>Oceania</option>
+                    </select>
+                    <input type="text" placeholder="Search destinations, activities..." class="search-input">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <div class="nav-action" id="signinBtn">
+                  <i class="far fa-user"></i>
+                  <span>Sign In</span>
+                </div>
+                <div class="nav-action" id="signupBtn">
+                  <i class="far fa-user"></i>
+                  <span>Sign Up</span>
+                </div>
+                <div class="nav-action">
+                  <i class="far fa-heart"></i>
+                  <span>Wishlist</span>
+                </div>
+              </div>
+        </nav>
+        
+        <div class="secondary-nav">
+            <div class="nav-links">
+                <a href="#" class="nav-link active"><i class="fas fa-compass"></i> Discover</a>
+                <a href="#" class="nav-link"><i class="fas fa-percent"></i> Deals</a>
+                <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="#" class="nav-link"><i class="fas fa-gift"></i> Gift Cards</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        
+        <div class="hero" id="hero">
+  <div class="carousel">
+    <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80');"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Welcome to Your Dream Destination</h1>
+    <p>Find the perfect place for your next adventure</p>
+  </div>
+</div>
+
+         
+          
+        
+        
+        <div class="form-container">
+            <form id="preferencesForm">
+                <!-- Destination Preferences Section -->
+                <section class="form-section">
+                    <h2><i class="fas fa-globe-americas"></i> Destination Preferences</h2>
+                    
+                    <div class="form-group">
+                        <label for="continent">Preferred Region/Continent:</label>
+                        <select id="continent" name="continent" class="form-control">
+                            <option value="">No preference</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                            <option value="africa">Africa</option>
+                            <option value="oceania">Australia & Oceania</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Destination Type:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="beach" name="destinationType" value="beach" class="custom-checkbox">
+                                <label for="beach"><i class="fas fa-umbrella-beach"></i> Beach</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mountain" name="destinationType" value="mountain" class="custom-checkbox">
+                                <label for="mountain"><i class="fas fa-mountain"></i> Mountain</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="city" name="destinationType" value="city" class="custom-checkbox">
+                                <label for="city"><i class="fas fa-city"></i> City</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="countryside" name="destinationType" value="countryside" class="custom-checkbox">
+                                <label for="countryside"><i class="fas fa-tree"></i> Countryside</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="island" name="destinationType" value="island" class="custom-checkbox">
+                                <label for="island"><i class="fas fa-water"></i> Island</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="desert" name="destinationType" value="desert" class="custom-checkbox">
+                                <label for="desert"><i class="fas fa-sun"></i> Desert</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Climate Preferences Section -->
+                <section class="form-section">
+                    <h2><i class="fas fa-cloud-sun"></i> Climate Preferences</h2>
+                    
+                    <div class="form-group">
+                        <label for="temperatureRange">Preferred Temperature (°C):</label>
+                        <div class="range-container">
+                            <input type="range" id="temperatureRange" name="temperatureRange" min="0" max="40" value="25" class="range-slider">
+                            <div class="range-value"><span id="temperatureValue">25</span>°C</div>
+                        </div>
+                        <div class="range-labels">
+                            <span>Cold</span>
+                            <span>Moderate</span>
+                            <span>Hot</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Weather Type:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sunny" name="weatherType" value="sunny" class="custom-checkbox">
+                                <label for="sunny"><i class="fas fa-sun"></i> Sunny</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moderate" name="weatherType" value="moderate" class="custom-checkbox">
+                                <label for="moderate"><i class="fas fa-cloud-sun"></i> Moderate</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cool" name="weatherType" value="cool" class="custom-checkbox">
+                                <label for="cool"><i class="fas fa-wind"></i> Cool</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="rainy" name="weatherType" value="rainy" class="custom-checkbox">
+                                <label for="rainy"><i class="fas fa-cloud-rain"></i> Rainy</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="snowy" name="weatherType" value="snowy" class="custom-checkbox">
+                                <label for="snowy"><i class="fas fa-snowflake"></i> Snowy</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Trip Purpose Section -->
+                <section class="form-section">
+                    <h2><i class="fas fa-suitcase-rolling"></i> Trip Purpose</h2>
+                    
+                    <div class="form-group">
+                        <label for="tripPurpose">Main Purpose of Your Trip:</label>
+                        <select id="tripPurpose" name="tripPurpose" class="form-control">
+                            <option value="honeymoon"><i class="fas fa-heart"></i> Honeymoon</option>
+                            <option value="heritage"><i class="fas fa-landmark"></i> Heritage & Archaeological Visit</option>
+                            <option value="pilgrim"><i class="fas fa-place-of-worship"></i> Pilgrimage</option>
+                            <option value="bachelor"><i class="fas fa-glass-cheers"></i> Bachelor Trip</option>
+                            <option value="friends"><i class="fas fa-users"></i> Friends Trip</option>
+                            <option value="family"><i class="fas fa-home"></i> Family Vacation</option>
+                            <option value="solo"><i class="fas fa-hiking"></i> Solo Adventure</option>
+                            <option value="business"><i class="fas fa-briefcase"></i> Business Trip</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Activities Interest:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sightseeing" name="activities" value="sightseeing" class="custom-checkbox">
+                                <label for="sightseeing"><i class="fas fa-binoculars"></i> Sightseeing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="adventure" name="activities" value="adventure" class="custom-checkbox">
+                                <label for="adventure"><i class="fas fa-running"></i> Adventure Sports</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="food" name="activities" value="food" class="custom-checkbox">
+                                <label for="food"><i class="fas fa-utensils"></i> Food Tours</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopping" name="activities" value="shopping" class="custom-checkbox">
+                                <label for="shopping"><i class="fas fa-shopping-bag"></i> Shopping</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="nightlife" name="activities" value="nightlife" class="custom-checkbox">
+                                <label for="nightlife"><i class="fas fa-cocktail"></i> Nightlife</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cultural" name="activities" value="cultural" class="custom-checkbox">
+                                <label for="cultural"><i class="fas fa-theater-masks"></i> Cultural Experiences</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="relaxation" name="activities" value="relaxation" class="custom-checkbox">
+                                <label for="relaxation"><i class="fas fa-spa"></i> Relaxation</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="nature" name="activities" value="nature" class="custom-checkbox">
+                                <label for="nature"><i class="fas fa-leaf"></i> Nature Exploration</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Budget Section -->
+                <section class="form-section">
+                    <h2><i class="fas fa-wallet"></i> Budget Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="totalBudget">Total Budget (USD):</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input type="number" id="totalBudget" name="totalBudget" min="100" placeholder="Enter your total budget" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accommodationBudget">Daily Accommodation Budget (USD):</label>
+                        <div class="range-container">
+                            <input type="range" id="accommodationBudget" name="accommodationBudget" min="10" max="500" value="100" class="range-slider">
+                            <div class="range-value">$<span id="accommodationValue">100</span> per night</div>
+                        </div>
+                        <div class="range-labels">
+                            <span>Budget</span>
+                            <span>Mid-range</span>
+                            <span>Luxury</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tripDuration">Trip Duration (days):</label>
+                        <div class="input-with-icon">
+                            <i class="far fa-calendar-alt"></i>
+                            <input type="number" id="tripDuration" name="tripDuration" min="1" max="30" value="7" class="form-control">
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Additional Preferences Section -->
+                <section class="form-section">
+                    <h2><i class="fas fa-sliders-h"></i> Additional Preferences</h2>
+                    
+                    <div class="form-group">
+                        <label>Essential Amenities Nearby:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hospitals" name="amenities" value="hospitals" class="custom-checkbox">
+                                <label for="hospitals"><i class="fas fa-hospital"></i> Hospitals</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="police" name="amenities" value="police" class="custom-checkbox">
+                                <label for="police"><i class="fas fa-shield-alt"></i> Police Stations</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pharmacy" name="amenities" value="pharmacy" class="custom-checkbox">
+                                <label for="pharmacy"><i class="fas fa-pills"></i> Pharmacies</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="atm" name="amenities" value="atm" class="custom-checkbox">
+                                <label for="atm"><i class="fas fa-money-bill-wave"></i> ATMs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="grocery" name="amenities" value="grocery" class="custom-checkbox">
+                                <label for="grocery"><i class="fas fa-shopping-basket"></i> Grocery Stores</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="transport" name="amenities" value="transport" class="custom-checkbox">
+                                <label for="transport"><i class="fas fa-subway"></i> Public Transport</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="foodPreference">Food Preferences:</label>
+                        <select id="foodPreference" name="foodPreference" class="form-control">
+                            <option value="any">Any Cuisine</option>
+                            <option value="local">Local Cuisine</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="halal">Halal</option>
+                            <option value="kosher">Kosher</option>
+                            <option value="gluten-free">Gluten-Free</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="localityRating">Minimum Locality Rating:</label>
+                        <select id="localityRating" name="localityRating" class="form-control">
+                            <option value="3">3+ Stars</option>
+                            <option value="3.5">3.5+ Stars</option>
+                            <option value="4" selected>4+ Stars</option>
+                            <option value="4.5">4.5+ Stars</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalNotes">Any Additional Requirements:</label>
+                        <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Tell us if you have any other specific requirements..." class="form-control"></textarea>
+                    </div>
+                </section>
+                
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Reset All
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Get Recommendations
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="results-container" id="resultsContainer">
+            <div class="results-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Your Personalized Travel Recommendations</h2>
+                <p>Based on your preferences, we've found these perfect destinations for you</p>
+            </div>
+            <div id="resultsContent" class="results-grid"></div>
+        </div>
+    
+    
+        
+    </main>
+
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TravelMatch</h3>
+                <p>Your perfect travel companion helping you discover amazing destinations tailored just for you.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Travel Guides</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get travel tips and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelMatch. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Modals -->
+<div id="signinModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="auth-container">
+        <div class="auth-header">
+          <h2>Sign In</h2>
+          <p>Access your travel recommendations</p>
+        </div>
+        <form class="auth-form">
+          <div class="form-group">
+            <input type="email" placeholder="Email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control" required>
+          </div>
+          <button type="submit" class="auth-btn">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="auth-container">
+        <div class="auth-header">
+          <h2>Sign Up</h2>
+          <p>Join our travel community</p>
+        </div>
+        <form class="auth-form">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Create Password" class="form-control" required>
+          </div>
+          <button type="submit" class="auth-btn">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Chatbot Widget -->
+<!-- Sticky Chatbot -->
+<div id="sticky-chatbot">
+    <div id="chatbox" class="collapsed">
+        <div id="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>Explorenext Bot</span>
+            <button id="toggle-chat"><i class="fas fa-chevron-down"></i></button>
+        </div>
+        <div id="messages"></div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Ask me about destinations..." />
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <div id="chat-icon">
+        <i class="fas fa-comments"></i>
+    </div>
+</div>
+
+
+    
+    <script src="main.js"></script>
+
+</body>
+</html>
